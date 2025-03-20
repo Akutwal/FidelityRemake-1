@@ -1,0 +1,45 @@
+body {
+    font-family: "Lato", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 5%;
+
+
+    h2 {
+        font-weight: normal;
+    }
+}
+
+
+.home > *:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    right: 63em; /* Adjust the position of the border */
+    top: 0;
+    bottom: 0;
+    width: 2px; /* Adjust the width of the border */
+    background-color: #ccc; /* Adjust the color of the border */
+    height: 45vh;
+    margin-top: 16em;
+}
+
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #128742;
+    color: white;
+    border: none;
+    width: 20em;
+    padding: 2em;
+    border-radius: 1em;
+}
