@@ -1,0 +1,34 @@
+.advising-container {
+    font-family: jacques-francois-shadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+}
+
+.advising-content {
+    max-width: 800px;
+    margin-top: -50px; /* Adjusted margin to move content up */
+}
+
+.advising-options {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.option {
+    text-align: center;
+}
+
+.option img {
+    width: 100px;
+    height: 100px;
+}
+
+.option p {
+    margin-top: 10px;
+    font-size: 16px;
+}

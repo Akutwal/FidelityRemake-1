@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import fidelityLogo from '../images/fidelity-logo-circle.png';
-import homeLargePic from '../images/home-large-pic.jpg';
+import homeLargePic from '../images/Female Investors.svg';
 import "./Home.css";
 
 function Home() {

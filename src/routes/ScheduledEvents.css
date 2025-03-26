@@ -1,0 +1,56 @@
+.scheduled-events-container {
+    font-family: jacques-francois-shadow;
+}
+
+.scheduled-events-content {
+    text-align: center;
+    padding: 50px;
+}
+
+.events-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    width: 100%; /* Ensure the list takes full width */
+    padding-left: 7%; /* Adjust padding to move the list slightly to the right */
+}
+
+.event {
+    border: 1px solid #ccc;
+    padding: 15px; /* Adjust padding to make the boxes smaller */
+    margin-bottom: 20px;
+    text-align: left;
+    width: 60%; /* Adjust width to make the boxes smaller */
+    max-width: 600px; /* Set a maximum width */
+}
+
+.cancel-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.event-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align buttons to the left */
+    gap: 10px;
+    position: absolute; /* Position the buttons absolutely */
+    right: 10%; /* Adjust the right position to align with the text */
+    top: 50%; /* Adjust the top position to align with the text */
+    transform: translateY(-50%); /* Center the buttons vertically */
+}
+
+.event-button {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 150px; /* Set a fixed width for the buttons */
+    text-align: Center; /* Center the text inside the buttons */
+}
