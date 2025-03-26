@@ -12,6 +12,10 @@ function Advising() {
         navigate('/scheduled-events');
     };
 
+    const handleAttendEventClick = () => {
+        navigate('/attend-event');
+    };
+
     return (
         <div className="advising-container">
             <div className="advising-content">
@@ -22,7 +26,7 @@ function Advising() {
                         <img src={scheduledEventsIcon} alt="Scheduled Events" />
                         <p>See my scheduled events</p>
                     </div>
-                    <div className="option">
+                    <div className="option" onClick={handleAttendEventClick}>
                         <img src={learningEventIcon} alt="Learning Event" />
                         <p>Attend a learning event</p>
                     </div>

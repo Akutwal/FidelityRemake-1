@@ -7,7 +7,8 @@ import Profile from './routes/Profile';
 import WhyFidelity from './routes/WhyFidelity';
 import News from './routes/News';
 import Advising from './routes/Advising';
-import ScheduledEvents from './routes/ScheduledEvents'; 
+import ScheduledEvents from './routes/ScheduledEvents';
+import AttendEvent from './routes/AttendEvent'; // Import AttendEvent component
 
 function App() {
 
@@ -36,7 +37,8 @@ function App() {
           <Route path="/advising" element={<Advising />} />
           <Route path="/news" element={<News />} />
           <Route path="/why-fidelity" element={<WhyFidelity />} />
-          <Route path="/scheduled-events" element={<ScheduledEvents />} /> {/* Add the new route */}
+          <Route path="/scheduled-events" element={<ScheduledEvents />} />
+          <Route path="/attend-event" element={<AttendEvent />} /> {/* Add the new route */}
         </Routes>
       </div>
     </Router>
