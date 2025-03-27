@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { EventContext } from '../context/EventContext';
 import './ScheduledEvents.css';
 
 function ScheduledEvents() {
-    const [events, setEvents] = useState([
-        {
-            id: 1,
-            title: 'The Stock Traders Expo',
-            date: 'Thursday, 20 February 2025',
-            time: '2:00 - 4:30 pm',
-            location: 'Main Floor, 928 E Avenue'
-        },
-        {
-            id: 2,
-            title: 'Investing Conference',
-            date: 'Monday, 29 July 2025',
-            time: '12:00 - 1:30 pm',
-            location: '3rd Floor, 1232 W Providence'
-        }
-    ]);
+    const { scheduledEvents } = useContext(EventContext);
+    const [localScheduledEvents, setLocalScheduledEvents] = useState(scheduledEvents);
 
-    const handleCancelClick = (id) => {
-        setEvents(events.filter(event => event.id !== id));
+    const cancelEvent = (id) => {
+        setLocalScheduledEvents(localScheduledEvents.filter(event => event.id !== id));
     };
 
     return (
@@ -29,11 +16,11 @@ function ScheduledEvents() {
                 <h1>Scheduled Events</h1>
                 <p>Check your calendar to stay on top of upcoming learning events. These sessions are a great way to build your skills, stay informed, and network. Be sure to review the topics in advance to get the most out of each event.</p>
                 <div className="events-list">
-                    {events.map(event => (
+                    {localScheduledEvents.map(event => (
                         <div className="event" key={event.id}>
                             <h2>{event.title}</h2>
                             <p>{event.date}<br />{event.time} at {event.location}</p>
-                            <button className="cancel-button" onClick={() => handleCancelClick(event.id)}>Cancel</button>
+                            <button className="cancel-button" onClick={() => cancelEvent(event.id)}>Cancel</button>
                         </div>
                     ))}
                 </div>
