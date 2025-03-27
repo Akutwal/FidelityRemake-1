@@ -25,7 +25,7 @@ function AttendEvent() {
                         <Link to="/scheduled-events">
                             <button className="action-button">Scheduled Events</button>
                         </Link>
-                        <Link to="/advising">
+                        <Link to="/advising/details"> 
                             <button className="action-button">Advising</button>
                         </Link>
                     </div>

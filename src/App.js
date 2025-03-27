@@ -2,12 +2,13 @@ import './App.css';
 import fidelityLogo from './images/fidelity-logo-circle.png';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { EventProvider } from './context/EventContext'; // Import EventProvider
+import { EventProvider } from './context/EventContext'; 
 import Home from './routes/Home';
 import Profile from './routes/Profile';
 import WhyFidelity from './routes/WhyFidelity';
 import News from './routes/News';
 import Advising from './routes/Advising';
+import NewAdvising from './routes/NewAdvising'; 
 import ScheduledEvents from './routes/ScheduledEvents';
 import AttendEvent from './routes/AttendEvent';
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/advising" element={<Advising />} />
+            <Route path="/advising/details" element={<NewAdvising />} /> 
             <Route path="/news" element={<News />} />
             <Route path="/why-fidelity" element={<WhyFidelity />} />
             <Route path="/scheduled-events" element={<ScheduledEvents />} />

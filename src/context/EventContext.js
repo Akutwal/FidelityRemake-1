@@ -3,7 +3,6 @@ import React, { createContext, useState } from 'react';
 export const EventContext = createContext();
 
 export const EventProvider = ({ children }) => {
-    // Initial events for "Attend Event"
     const [attendEvents, setAttendEvents] = useState([
         {
             id: 3,
@@ -21,7 +20,6 @@ export const EventProvider = ({ children }) => {
         }
     ]);
 
-    // Existing scheduled events
     const [scheduledEvents, setScheduledEvents] = useState([
         {
             id: 1,
@@ -39,7 +37,6 @@ export const EventProvider = ({ children }) => {
         }
     ]);
 
-    // Function to move an event from "Attend Event" to "Scheduled Events"
     const attendEvent = (eventId) => {
         const eventToMove = attendEvents.find(event => event.id === eventId);
         if (eventToMove) {
@@ -48,8 +45,13 @@ export const EventProvider = ({ children }) => {
         }
     };
 
+    // Add a new function to add events to scheduledEvents
+    const addScheduledEvent = (newEvent) => {
+        setScheduledEvents([...scheduledEvents, newEvent]);
+    };
+
     return (
-        <EventContext.Provider value={{ attendEvents, scheduledEvents, attendEvent }}>
+        <EventContext.Provider value={{ attendEvents, scheduledEvents, attendEvent, addScheduledEvent }}>
             {children}
         </EventContext.Provider>
     );

@@ -16,6 +16,10 @@ function Advising() {
         navigate('/attend-event');
     };
 
+    const handleAdvisingClick = () => {
+        navigate('/advising/details'); // Navigate to the new Advising Details page
+    };
+
     return (
         <div className="advising-container">
             <div className="advising-content">
@@ -30,7 +34,7 @@ function Advising() {
                         <img src={learningEventIcon} alt="Learning Event" />
                         <p>Attend a learning event</p>
                     </div>
-                    <div className="option">
+                    <div className="option" onClick={handleAdvisingClick}>
                         <img src={advisingIcon} alt="Advising" />
                         <p>Advising</p>
                     </div>

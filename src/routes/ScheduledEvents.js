@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { EventContext } from '../context/EventContext';
 import './ScheduledEvents.css';
 
@@ -25,8 +26,12 @@ function ScheduledEvents() {
                     ))}
                 </div>
                 <div className="event-buttons">
-                    <button className="event-button">Attend an Event</button>
-                    <button className="event-button">Advising</button>
+                    <Link to="/attend-event">
+                        <button className="event-button">Attend an Event</button>
+                    </Link>
+                    <Link to="/advising/details"> {/* Updated route */}
+                        <button className="event-button">Advising</button>
+                    </Link>
                 </div>
             </div>
         </div>
