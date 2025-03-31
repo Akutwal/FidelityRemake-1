@@ -41,6 +41,12 @@
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.3s ease; /* Add smooth transition for hover effect */
+}
+
+.attend-button:hover {
+    background-color: #3A6A28; /* Highlight button in a darker green on hover */
+    color: white; /* Keep text color white for contrast */
 }
 .action-buttons {
     display: flex;
