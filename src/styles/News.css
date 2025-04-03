@@ -1,0 +1,19 @@
+.news-box {
+    background-color: lightgrey;
+    padding: 40px; /* Increases padding for more vertical space */
+    margin: 0 100px; /* Adds 100px borders to the left and right */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    min-height: 200px; /* Ensures the box is at least 200px tall */
+    text-align: center; /* Optional: Centers the content inside the box */
+}
+
+.news-link-section {
+    margin-top: 20px; /* Adds spacing between the box and the link section */
+    text-align: center; /* Optional: Centers the link section */
+}
+
+.news-link {
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+}
