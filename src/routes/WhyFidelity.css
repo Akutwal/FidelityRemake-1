@@ -1,0 +1,91 @@
+.why-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    padding: -1em -1em;
+    min-height: 100vh; /* Full viewport height */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+}
+
+.why-title {
+    font-size: 2rem; /* Use relative font size for responsiveness */
+    margin-bottom: 2em; /* Space below the title */
+    margin-top: -2em; /* Move the title upward */
+    margin-left: 1em; /* Move the title slightly to the right */
+    font-weight: bold;
+    text-align: left; /* Align the title to the left */
+    width: 100%; /* Full width for alignment */
+    display: flex;
+    align-items: center; /* Align "We are" and the logo vertically */
+    gap: 0.5em; /* Add spacing between "We are" and the logo */
+}
+
+.why-title-black {
+    color: #000; /* Black color for "We are" */
+}
+
+.why-title-logo {
+    height: 4em; /* Adjust the height to match the text size */
+    vertical-align: middle; /* Align the logo vertically with the text */
+}
+
+.why-box {
+    background-color: #F4EEEE;
+    padding: 2em; /* Padding for spacing inside the box */
+    color: #333;
+    font-size: 1.1rem; /* Use relative font size */
+    line-height: 1.8; /* Line height for readability */
+    width: 800px; /* Increased width */
+    height: 500px; /* Increased height to make it larger */
+    text-align: left; /* Left-aligned text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: auto; /* Add scroll if content overflows */
+}
+
+.why-subtitle {
+    color: #4D8536;
+    font-size: 1.3rem; /* Use relative font size */
+    margin-top: 1.5em; /* Space above the subtitle */
+    font-weight: bold; /* Bold subtitle */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .why-title {
+        font-size: 2rem; /* Reduce title size for smaller screens */
+    }
+
+    .why-title-logo {
+        height: 2.5em; /* Adjust logo size */
+    }
+
+    .why-box {
+        padding: 1.5em; /* Reduce padding for smaller screens */
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .why-subtitle {
+        font-size: 1.2rem; /* Adjust subtitle size */
+    }
+}
+
+@media (max-width: 480px) {
+    .why-title {
+        font-size: 1.8rem; /* Further reduce title size for very small screens */
+    }
+
+    .why-title-logo {
+        height: 2em; /* Adjust logo size */
+    }
+
+    .why-box {
+        padding: 1em; /* Further reduce padding */
+        font-size: 0.9rem; /* Adjust font size */
+    }
+
+    .why-subtitle {
+        font-size: 1rem; /* Adjust subtitle size */
+    }
+}
