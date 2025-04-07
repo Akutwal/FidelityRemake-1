@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './News.css'; // Importing CSS for styling
 
 function News() {
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        // Fetch news articles from the API
+        const fetchNews = async () => {
+            try {
+                const response = await fetch(
+                    `https://newsapi.org/v2/top-headlines?country=us&apiKey=451382ca42a64f3f9c20ac3fc951dfd5`
+                );
+                const data = await response.json();
+                setArticles(data.articles || []);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                setLoading(false);
+            }
+        };
+
+        fetchNews();
+    }, []);
+
     return (
         <>
             {/* Header section */}
@@ -14,75 +36,27 @@ function News() {
                 <p>This is the content inside the light grey box.</p>
             </div>
 
-        <div className="total-boxs">
-            {/* Bloomberg link box */}
-            <div className="news-box1">
-                <p>Bloomberg:</p>
-                <a href="https://www.bloomberg.com/news/articles/2025-04-03/trump-tariffs-set-to-zap-nearly-2-trillion-from-us-stock-market" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="news-link">
-                    Read more about the latest news
-                </a>
+            <div className="total-boxs">
+                {loading ? (
+                    <p>Loading news...</p>
+                ) : (
+                    articles.map((article, index) => (
+                        <div key={index} className="news-box">
+                            <p>{article.source.name}:</p>
+                            <a
+                                href={article.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="news-link"
+                            >
+                                {article.title}
+                            </a>
+                        </div>
+                    ))
+                )}
             </div>
-
-            {/* Bloomberg link box */}
-            <div className="news-box1">
-                <p>Bloomberg:</p>
-                <a href="https://www.bloomberg.com/news/articles/2025-04-03/trump-tariffs-set-to-zap-nearly-2-trillion-from-us-stock-market" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="news-link">
-                    Read more about the latest news
-                </a>
-            </div>
-
-            {/* Bloomberg link box */}
-            <div className="news-box2">
-                <p>Bloomberg:</p>
-                <a href="https://www.bloomberg.com/news/articles/2025-04-03/trump-tariffs-set-to-zap-nearly-2-trillion-from-us-stock-market" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="news-link">
-                    Read more about the latest news
-                </a>
-            </div>
-
-            {/* Bloomberg link box */}
-            <div className="news-box3">
-                <p>Bloomberg:</p>
-                <a href="https://www.bloomberg.com/news/articles/2025-04-03/trump-tariffs-set-to-zap-nearly-2-trillion-from-us-stock-market" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="news-link">
-                    Read more about the latest news
-                </a>
-            </div>
-
-            {/* Bloomberg link box */}
-            <div className="news-box4">
-                <p>Bloomberg:</p>
-                <a href="https://www.bloomberg.com/news/articles/2025-04-03/trump-tariffs-set-to-zap-nearly-2-trillion-from-us-stock-market" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="news-link">
-                    Read more about the latest news
-                </a>
-            </div>
-
-            {/* Bloomberg link box */}
-            <div className="news-box5">
-                <p>Bloomberg:</p>
-                <a href="https://www.bloomberg.com/news/articles/2025-04-03/trump-tariffs-set-to-zap-nearly-2-trillion-from-us-stock-market" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   className="news-link">
-                    Read more about the latest news
-                </a>
-            </div>
-        </div>
         </>
     );
-};
+}
 
 export default News;

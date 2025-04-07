@@ -23,63 +23,12 @@
     font-weight: bold;
 }
 
-/* Move news-box1 to the right */
-.news-box1 {
-    background-color: lightgrey;
-    padding: 40px;
-    margin: 20px 0; /* Adds spacing above and below */
-    width: 90%; /* Adjusts the width of the box */
-    height: 150px;
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    text-align: center;
-    float: left; /* Moves the box to the right side of the page */
-    margin-right: 20px; /* Adds spacing from the right edge of the page */
+/* Total boxs styling */
+.total-boxs {
+    position: relative; /* Ensures proper positioning */
+    padding: 10px; /* Optional: Adds some padding for spacing */
+    width: auto; /* Allows the width to adjust dynamically */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
 }
 
-.news-box2 {
-    background-color: lightgrey;
-    padding: 40px;
-    margin: 20px 0; /* Adds spacing above and below */
-    width: 90%; /* Adjusts the width of the box */
-    height: 150px;
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    text-align: center;
-    float: left; /* Moves the box to the right side of the page */
-    margin-right: 20px; /* Adds spacing from the right edge of the page */
-}
 
-.news-box3 {
-    background-color: lightgrey;
-    padding: 40px;
-    margin: 20px 0; /* Adds spacing above and below */
-    width: 90%; /* Adjusts the width of the box */
-    height: 150px;
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    text-align: center;
-    float: left; /* Moves the box to the right side of the page */
-    margin-right: 20px; /* Adds spacing from the right edge of the page */
-}
-
-.news-box4 {
-    background-color: lightgrey;
-    padding: 40px;
-    margin: 20px 0; /* Adds spacing above and below */
-    width: 90%; /* Adjusts the width of the box */
-    height: 150px;
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    text-align: center;
-    float: left; /* Moves the box to the right side of the page */
-    margin-right: 20px; /* Adds spacing from the right edge of the page */
-}
-
-.news-box5 {
-    background-color: lightgrey;
-    padding: 40px;
-    margin: 20px 0; /* Adds spacing above and below */
-    width: 90%; /* Adjusts the width of the box */
-    height: 150px;
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    text-align: center;
-    float: left; /* Moves the box to the right side of the page */
-    margin-right: 20px; /* Adds spacing from the right edge of the page */
-}
