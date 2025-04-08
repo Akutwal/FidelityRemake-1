@@ -1,34 +1,100 @@
 /* News heading styling */
 .news-heading {
     text-align: center;
-    font-size: 2rem;
-    margin: 0;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #333;
+    font-weight: bold;
 }
 
 /* News box styling */
 .news-box {
-    background-color: lightgrey;
-    padding: 40px;
-    margin: 20px auto; /* Centers the box horizontally */
-    width: 60%; /* Adjusts the width of the box */
-    height: 100px;
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    text-align: center;
+    background-color: #F4EEEE;
+    padding: 30px;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+/* Article source name styling */
+.news-box p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
 }
 
 /* Link section styling */
 .news-link {
-    color: blue;
-    text-decoration: underline;
+    color: #000;
+    text-decoration: none;
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
-/* Total boxs styling */
+
+
+/* Total boxes styling */
 .total-boxs {
-    position: relative; /* Ensures proper positioning */
-    padding: 10px; /* Optional: Adds some padding for spacing */
-    width: auto; /* Allows the width to adjust dynamically */
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    position: relative;
+    padding: 10px;
+    width: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* News logo styling */
+.news-logo {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Stock data container */
+.stock-data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #F4EEEE;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Individual stock item */
+.stock-item {
+    flex: 1 1 calc(20% - 20px);
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 
+
+.stock-item h3 {
+    margin: 0;
+    color: #4caf50;
+    font-size: 1.5rem;
+}
+
+.stock-item p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+}

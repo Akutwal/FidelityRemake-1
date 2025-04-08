@@ -4,6 +4,7 @@ import './News.css'; // Importing CSS for styling
 function News() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [stockData, setStockData] = useState([]); // State for multiple stock data
 
     useEffect(() => {
         // Fetch news articles from the API
@@ -24,6 +25,30 @@ function News() {
         fetchNews();
     }, []);
 
+    useEffect(() => {
+        // Fetch stock data for multiple symbols
+        const fetchStockData = async () => {
+            const symbols = ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA']; // List of stock symbols
+            try {
+                const stockPromises = symbols.map((symbol) =>
+                    fetch(
+                        `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=cvqqap9r01qp88cn4d80cvqqap9r01qp88cn4d8g`
+                    ).then((response) => response.json())
+                );
+                const stockResults = await Promise.all(stockPromises);
+                const stockDataWithSymbols = stockResults.map((data, index) => ({
+                    symbol: symbols[index],
+                    ...data,
+                }));
+                setStockData(stockDataWithSymbols);
+            } catch (error) {
+                console.error('Error fetching stock data:', error);
+            }
+        };
+
+        fetchStockData();
+    }, []);
+
     return (
         <>
             {/* Header section */}
@@ -33,8 +58,21 @@ function News() {
 
             {/* News box */}
             <div className="news-box">
-                <p>This is the content inside the light grey box.</p>
-            </div>
+    {stockData.length > 0 && (
+        <div className="stock-data">
+            {stockData.slice(0, 4).map((stock, index) => ( // Limit to 4 items
+                <div key={index} className="stock-item">
+                    <h3>{stock.symbol}</h3>
+                    <p>Current Price: ${stock.c}</p>
+                    <p>High: ${stock.h}</p>
+                    <p>Low: ${stock.l}</p>
+                    <p>Open: ${stock.o}</p>
+                    <p>Previous Close: ${stock.pc}</p>
+                </div>
+            ))}
+        </div>
+    )}
+</div>
 
             <div className="total-boxs">
                 {loading ? (
@@ -42,6 +80,18 @@ function News() {
                 ) : (
                     articles.map((article, index) => (
                         <div key={index} className="news-box">
+                            {/* Display the clickable logo */}
+                            <a
+                                href={article.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img
+                                    src={`https://logo.clearbit.com/${new URL(article.url).hostname}`}
+                                    alt={`${article.source.name} logo`}
+                                    className="news-logo"
+                                />
+                            </a>
                             <p>{article.source.name}:</p>
                             <a
                                 href={article.url}
