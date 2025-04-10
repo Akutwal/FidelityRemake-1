@@ -8,6 +8,7 @@ function Profile() {
     const [amount, setAmount] = useState("");
     const [totalFidelity, setTotalFidelity] = useState(530.44); // Initial Total in Fidelity
     const [totalIndividualValue, setTotalIndividualValue] = useState(527.46); // Initial Total individual value
+    const [individualCash, setIndividualCash] = useState(1.52); // Initial Individual cash
 
     const handleEditClick = () => {
         setIsEditing(true);
@@ -34,9 +35,10 @@ function Profile() {
         const transferAmount = parseFloat(amount);
 
         if (transferAmount > 1.0) {
-            // Update the Total in Fidelity and Total individual value
+            // Update the Total in Fidelity, Total individual value, and Individual cash
             setTotalFidelity((prev) => prev + transferAmount);
             setTotalIndividualValue((prev) => prev + transferAmount);
+            setIndividualCash((prev) => prev + transferAmount);
 
             // Reset the amount input field
             setAmount("");
@@ -113,7 +115,7 @@ function Profile() {
                     <hr />
                     <p>Total individual value <span>${totalIndividualValue.toFixed(2)}</span></p>
                     <p>Individual holdings <span>$525.96</span></p>
-                    <p>Individual cash <span>$1.52</span></p>
+                    <p>Individual cash <span>${individualCash.toFixed(2)}</span></p>
                 </div>
             </div>
         </div>
