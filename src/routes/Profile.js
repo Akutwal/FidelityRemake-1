@@ -106,8 +106,10 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-balance">
+                
+                <div className="Total"> 
                 <h1>${totalFidelity.toFixed(2)}</h1>
-                <p>Total in Fidelity</p>
+                     <p>Total in Fidelity</p></div>
             </div>
             <div className="profile-content">
                 <div className="profile-investing">
