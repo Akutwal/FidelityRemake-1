@@ -1,0 +1,62 @@
+.create-account-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding-top: 5em;
+}
+
+.create-account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em; /* Add spacing between rows */
+    width: 100%;
+    max-width: 400px; /* Limit the form width */
+}
+
+.create-account-form label {
+    flex: 1;
+    text-align: left;
+    margin-right: 1em; /* Add spacing between label and input */
+}
+
+.create-account-form input {
+    flex: 2;
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+.create-account-form div {
+    display: flex;
+    align-items: center;
+}
+
+.create-account-form button {
+    padding: 0.7em;
+    font-size: 1em;
+    background-color: green; /* Green background for the button */
+    color: white; /* White text for contrast */
+    border: none;
+    border-radius: 15px; /* Increased value for more rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin: 0 auto; /* Center the button horizontally */
+    display: block; /* Ensure the button behaves as a block element */
+    width: 45%;
+}
+
+.create-account-form button:hover {
+    background-color: darkgreen; /* Darker green on hover */
+}
+
+.container {
+    background-color: lightgray;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 1.5em;
+    width: 25%;
+}
