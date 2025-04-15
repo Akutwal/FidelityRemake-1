@@ -1,42 +1,51 @@
 .fidelity-logo {
     height: 8em;
+    margin-right: 1em; /* Add spacing between the logo and the links */
 }
 
-.nav-link.disabled {
-    color: gray;
-    pointer-events: none; /* Disable clicking */
-    cursor: not-allowed; /* Show a "not allowed" cursor */
-}
 .navbar {
     display: flex;
     align-items: center;
     background-color: #4D8536;
-    height: 15vh;  
-    h3 {
-        color: white;
-        font-size: 1.15em;
-        margin-left: 1em;
-    }
+    height: 15vh;
+    padding: 0 1em; /* Add padding for spacing */
+}
 
-    input {
-        background-color: #D9D9D9;
-        border: none;
-        border-radius: 2em;
-        height: 2em;
-        padding: 0.5em;
-        font-size: 1em;
-        margin-left: 60em;
-        margin-right: .5em;
-        width: 15em;
-    }
+.navbar h3 {
+    color: white;
+    font-size: 1.15em;
+    margin: 0 0.3em; /* Reduced horizontal spacing between links */
+}
 
+.nav-link,
+.logout-button {
+    text-decoration: none;
+    color: white;
+    font-size: 1.15em;
+    cursor: pointer;
+    margin: 0 0.3em; /* Reduced horizontal spacing between buttons */
+    background: none;
+    border: none;
+    padding: 0.5em 1em; /* Padding for better click area */
+    border-radius: 2em; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.logout-button:hover {
+    color: #4D8536; /* Fidelity green text on hover */
 }
 
 .search-wrapper {
-    position: relative;
-    margin-left: auto; 
+    margin-left: auto; /* Push search box to the far right */
 }
 
-.nav-link {
-    text-decoration: none;
+.search-wrapper input {
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 2em;
+    height: 2em;
+    padding: 0.5em;
+    font-size: 1em;
+    width: 15em;
 }
