@@ -1,0 +1,318 @@
+/* Reset and base styles */
+.stocks-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.stocks-page body {
+    background-color: #f9f9f9;
+}
+
+/* Page Layout */
+.stocks-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.stocks-page .main-content {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
+}
+
+.stocks-page .left-column {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stocks-page .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Investing Overview */
+.stocks-page .investing-overview {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stocks-page .investing-overview h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stocks-page .investing-amount {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.stocks-page .investment-chart {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stocks-page .line-chart {
+    width: 100%;
+    height: 100%;
+}
+
+.stocks-page .timeframe-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.stocks-page .timeframe-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.stocks-page .timeframe-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Buying Power Section */
+.stocks-page .buying-power-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stocks-page .buying-power-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stocks-page .buying-power-amount {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stocks-page .dropdown-arrow {
+    font-size: 12px;
+    transition: transform 0.2s;
+}
+
+.stocks-page .dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.stocks-page .buying-power-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.stocks-page .buying-power-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.stocks-page .deposit-btn {
+    background-color: #338633;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Daily Movers Section */
+.stocks-page .daily-movers {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stocks-page .daily-movers h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.stocks-page .movers-subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.stocks-page .movers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stocks-page .mover-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.stocks-page .mover-card:hover {
+    background-color: #f9f9f9;
+}
+
+.stocks-page .mover-name {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.stocks-page .mover-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stocks-page .mover-change {
+    font-size: 14px;
+}
+
+.stocks-page .mover-change.positive {
+    color: #22c55e;
+}
+
+.stocks-page .mover-change.negative {
+    color: #ef4444;
+}
+
+/* Stocks & My List Sections */
+.stocks-page .stocks-section,
+.stocks-page .my-list-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stocks-page .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stocks-page .section-header h2 {
+    font-size: 18px;
+}
+
+.stocks-page .search-box input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.stocks-page .list-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.stocks-page .dropdown-icon {
+    font-size: 10px;
+}
+
+.stocks-page .stocks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.stocks-page .stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.stocks-page .stock-item:hover {
+    background-color: #f9f9f9;
+}
+
+.stocks-page .stock-item:last-child {
+    border-bottom: none;
+}
+
+.stocks-page .stock-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stocks-page .stock-symbol {
+    font-weight: bold;
+    margin-bottom: 3.2px;
+    text-align: left; /* Ensure the text is left-aligned */
+}
+
+.stocks-page .stock-description,
+.stocks-page .stock-shares {
+    font-size: 12px;
+    color: #666;
+}
+
+.stocks-page .stock-price-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stocks-page .stock-chart {
+    font-size: 20px;
+}
+
+.stocks-page .stock-price {
+    font-weight: bold;
+}
+
+/* No Results Message */
+.stocks-page .no-results {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .stocks-page .main-content {
+        flex-direction: column;
+    }
+    
+    .stocks-page .movers-grid {
+        grid-template-columns: 1fr;
+    }
+}

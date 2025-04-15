@@ -17,7 +17,8 @@ function Advising() {
     };
 
     const handleAdvisingClick = () => {
-        navigate('/advising/details'); // Navigate to the new Advising Details page
+        console.log('Navigating to /advising/details');
+        navigate('/advising/details'); // Correct route for the new advising page
     };
 
     return (

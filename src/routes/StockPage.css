@@ -1,0 +1,139 @@
+.stock-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stock-page .stock-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.stock-page .stock-header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stock-page .stock-header h2 {
+    font-size: 32px;
+    color: #2a9d8f;
+    margin-bottom: 20px;
+}
+
+.stock-page .stock-chart {
+    margin: 20px 0;
+}
+
+.stock-page .line-chart {
+    width: 100%;
+    height: auto;
+}
+
+.stock-page .timeframe-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stock-page .timeframe-buttons button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stock-page .timeframe-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+.stock-page .holdings-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.stock-page .holdings-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.stock-page .holdings-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.stock-page .buy-sell-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.stock-page .buy-sell-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stock-page .buy-sell-tabs button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stock-page .buy-sell-tabs button.active {
+    background-color: #2a9d8f;
+    color: white;
+}
+
+.stock-page .buy-sell-tabs button:hover {
+    background-color: #e0e0e0;
+}
+
+.stock-page .buy-sell-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stock-page .buy-sell-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.stock-page .buy-sell-form input,
+.stock-page .buy-sell-form select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.stock-page .buy-sell-button {
+    padding: 10px;
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stock-page .buy-sell-button:hover {
+    background-color: #21867a;
+}
+
+.stock-page .shares-available {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
