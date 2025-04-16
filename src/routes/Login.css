@@ -47,7 +47,8 @@
     background-color: #e0e0e0; /* Slightly darker gray on focus */
 }
 
-.login-form button {
+/* Target only the Log In button */
+.login-form button[type="submit"] {
     padding: 0.7em;
     font-size: 1em;
     background-color: green;
@@ -57,8 +58,72 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     align-self: center; /* Center the button horizontally */
+    margin-top: 1em; /* Add spacing above the Log In button */
 }
 
-.login-form button:hover {
+.login-form button[type="submit"]:hover {
     background-color: darkgreen;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em; /* Add spacing below the section */
+    gap: 2em; /* Increase spacing between elements */
+    font-size: 0.9em; /* Slightly smaller font size for the label */
+    color: #333; /* Darker text color for contrast */
+}
+
+.remember-me input[type="checkbox"] {
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+}
+
+.forgot-password-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5em; /* Add spacing between the icon and text */
+    background-color: transparent;
+    border: none;
+    color: #007bff; /* Blue color for the button text */
+    font-size: 0.9em;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.forgot-password-button:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.forgot-password-text {
+    color: black; /* Change the text color to black */
+    font-size: 0.9em; /* Slightly smaller font size */
+    position: relative; /* Enable positioning */
+    top: -0.2em; /* Move the text slightly up */
+    cursor: default; /* No pointer cursor for static text */
+}
+
+/* Ensure the envelope button has no green background */
+.envelope-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.envelope-icon {
+    width: 1em;
+    height: 1em;
+    background-color: transparent; /* Ensure no background color */
+    border: none; /* Remove any border if present */
+}
+
+.people-icon {
+    margin: 1em auto; /* Center the icon horizontally and add vertical spacing */
+    width: 4em; /* Set the width of the icon */
+    margin-top: 5em; /* Add more space above the icon */
+    margin-bottom: 1em; /* Add space below the icon */
 }

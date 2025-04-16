@@ -1,13 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import './CreateAccount.css';
 
 function CreateAccount() {
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent the default form submission behavior
-        navigate("/login"); // Redirect to the login page
+        event.preventDefault();
+        navigate("/personal-info"); // Redirect to the PersonalInfo page
     };
 
     return (
