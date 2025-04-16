@@ -72,7 +72,7 @@ function App({ navigate }) {
           <Route path="/scheduled-events" element={<ScheduledEvents />} />
           <Route path="/attend-event" element={<AttendEvent />} />
           <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/personal-info" element={<PersonalInfo />} /> {/* Add this route */}
+          <Route path="/personal-info" element={<PersonalInfo onLogin={handleLogin} />} /> {/* Pass onLogin */}
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/stocks" element={<Stocks onLogout={handleLogout} />} />
           <Route path="/stocks/:symbol" element={<StockPage />} />

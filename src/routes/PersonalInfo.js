@@ -1,17 +1,44 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./PersonalInfo.css"; // Optional: Add a CSS file for styling
+import { useNavigate, Link } from "react-router-dom";
+import "./PersonalInfo.css";
 
-function PersonalInfo() {
+function PersonalInfo({ onLogin, isLoggedIn, handleLogout, fidelityLogo }) { // Accept onLogin, isLoggedIn, handleLogout, and fidelityLogo as props
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        onLogin(); // Update the login state
         navigate("/stocks"); // Redirect to the Stocks page
     };
 
     return (
         <div className="personal-info-container">
+            <nav className="navbar"> 
+                <Link to={isLoggedIn ? "/stocks" : "/"}>
+                    <img src={fidelityLogo} className="fidelity-logo" alt="Fidelity Logo" />
+                </Link>  
+                {isLoggedIn ? (
+                    <>
+                        <Link to="/profile" className="nav-link"><h3>Profile</h3></Link> <h3> | </h3>
+                        <Link to="/advising" className="nav-link"><h3>Advising</h3></Link> <h3> | </h3>
+                        <Link to="/news" className="nav-link"><h3>News & Research</h3></Link> <h3> | </h3>
+                        <Link to="/why-fidelity" className="nav-link"><h3>Why Fidelity?</h3></Link> <h3> | </h3>
+                        <button className="nav-link logout-button" onClick={handleLogout}>
+                            <h3>Log Out</h3>
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        <span className="nav-link disabled"><h3>Profile</h3></span> <h3> | </h3>
+                        <span className="nav-link disabled"><h3>Advising</h3></span> <h3> | </h3>
+                        <span className="nav-link disabled"><h3>News & Research</h3></span> <h3> | </h3>
+                        <Link to="/why-fidelity" className="nav-link"><h3>Why Fidelity?</h3></Link>
+                    </>
+                )}
+                <div className="search-wrapper">
+                    <input type="search" placeholder="Search"></input>
+                </div>
+            </nav>
             <h1>Personal Information</h1>
             <form className="personal-info-form" onSubmit={handleSubmit}>
                 <label htmlFor="first-name">First Name</label>
