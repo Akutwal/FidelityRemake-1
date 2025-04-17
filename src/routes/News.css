@@ -98,3 +98,41 @@
     font-weight: bold;
     color: #555;
 }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .stock-item {
+        flex: 1 1 calc(25% - 20px);
+    }
+    .news-box {
+        width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    .stock-item {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+    .news-box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .stock-item {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .news-box {
+        width: 95%;
+    }
+}
+
+@media (max-width: 576px) {
+    .stock-item {
+        flex: 1 1 100%;
+    }
+    .news-box {
+        width: 100%;
+        padding: 20px;
+    }
+}
