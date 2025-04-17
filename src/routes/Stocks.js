@@ -9,6 +9,7 @@ function Stocks() {
     const [dailyMovers, setDailyMovers] = useState([]);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isSearching, setIsSearching] = useState(false);
+    const [buyingPower, setBuyingPower] = useState(1.52); // Default value that will be updated from localStorage
 
     // Hardcoded stocks for My List Section
     const [myListStocks, setMyListStocks] = useState([
@@ -20,6 +21,28 @@ function Stocks() {
 
     const navigate = useNavigate(); // Initialize the navigate function
     const API_TOKEN = "cvupjhpr01qjg13b5smgcvupjhpr01qjg13b5sn0";
+
+    // Add this useEffect to load buying power from localStorage
+    useEffect(() => {
+        const loadBuyingPower = () => {
+            const savedBuyingPower = localStorage.getItem("buyingPower");
+            if (savedBuyingPower) {
+                setBuyingPower(parseFloat(savedBuyingPower));
+            } else {
+                // Initialize buying power in localStorage if it doesn't exist
+                localStorage.setItem("buyingPower", buyingPower.toString());
+            }
+        };
+
+        loadBuyingPower();
+
+        // Add event listener to detect localStorage changes
+        window.addEventListener('storage', loadBuyingPower);
+
+        return () => {
+            window.removeEventListener('storage', loadBuyingPower);
+        };
+    }, []);
 
     useEffect(() => {
         // Fetch stock data for the Stocks Section
@@ -171,7 +194,7 @@ function Stocks() {
                         <div className="buying-power-header" onClick={toggleDropdown}>
                             <span>Buying power</span>
                             <div className="buying-power-amount">
-                                <span>$1.52</span>
+                                <span>${buyingPower.toFixed(2)}</span>
                                 <span className={`dropdown-arrow ${isDropdownOpen ? "open" : ""}`}>▼</span>
                             </div>
                         </div>
@@ -180,7 +203,7 @@ function Stocks() {
                             <div className="buying-power-details">
                                 <div className="buying-power-total">
                                     <span>Total</span>
-                                    <span>$1.52</span>
+                                    <span>${buyingPower.toFixed(2)}</span>
                                 </div>
                                 <button className="deposit-btn" onClick={handleDepositClick}>Deposit funds</button>
                             </div>

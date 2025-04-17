@@ -270,6 +270,7 @@
 
 .stocks-page .stock-info {
     display: flex;
+    
     flex-direction: column;
 }
 
@@ -287,8 +288,11 @@
 
 .stocks-page .stock-price-info {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    width: 50%;
+    align-items: center;
+    gap: 100px;
 }
 
 .stocks-page .stock-chart {
@@ -297,6 +301,7 @@
 
 .stocks-page .stock-price {
     font-weight: bold;
+    width: 100%;
 }
 
 /* No Results Message */
@@ -315,4 +320,67 @@
     .stocks-page .movers-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Add to your existing StockPage.css */
+
+/* Transaction Message Styles */
+.stock-page-container .transaction-message {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.stock-page-container .transaction-message.success {
+    background-color: #e6f7e6;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.stock-page-container .transaction-message.error {
+    background-color: #ffebee;
+    color: #F44336;
+    border: 1px solid #F44336;
+}
+
+/* Estimated Value Styling */
+.stock-page-container .estimated-value {
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Animation for transaction message */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Disabled button styling */
+.stock-page-container .buy-sell-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Enhance styling for active tab */
+.stock-page-container .buy-sell-tabs button.active {
+    background-color: white;
+    border-bottom: 3px solid #4CAF50;
+    color: #4CAF50;
+}
+
+/* Enhance dropdown styling */
+.stock-page-container .dropdown-select:hover {
+    background-color: #f5f5f5;
+}
+
+/* Make form inputs more interactive */
+.stock-page-container .form-group input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    outline: none;
 }
