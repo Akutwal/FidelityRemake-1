@@ -1,21 +1,36 @@
 .personal-info-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 2em;
-    background-color: #f9f9f9;
+    background-color: lightgrey; /* Change the background color to gray */
+    border: 2px solid #ccc; /* Add a border around the box */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+    max-width: 800px; /* Set a max width for the box */
+    margin: 0 auto; /* Center the box horizontally */
 }
 
 .personal-info-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1.5em; /* Add spacing between fields */
+    width: 100%;
+    max-width: 800px;
+}
+
+#personalinfoheader {
+    text-align: center;
+}
+
+.personal-info-form .form-group {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    width: 100%;
-    max-width: 400px;
 }
 
 .personal-info-form label {
     font-weight: bold;
+    margin-bottom: 0.5em; /* Ad `d spacing below labels */
 }
 
 .personal-info-form input {
@@ -26,6 +41,7 @@
 }
 
 .personal-info-form button {
+    grid-column: span 2; /* Make the button span both columns */
     padding: 0.7em;
     font-size: 1em;
     background-color: green;

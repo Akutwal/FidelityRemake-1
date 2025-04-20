@@ -24,7 +24,7 @@ function Login({ onLogin }) {
                 <img src={fidelityTextBig} alt="Fidelity Logo" />
             </div>
             <div id="loginform">
-                <img src={peopleIcon} alt="People Icon" className="people-icon" /> {/* Add the people icon */}
+                <img src={peopleIcon} alt="People Icon" className="people-icon" /> 
                 <form className="login-form" onSubmit={handleLogin}>
                     <label htmlFor="username">Username</label>
                     <input type="text" id="username" name="username" required />

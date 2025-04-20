@@ -12,8 +12,9 @@ function PersonalInfo({ onLogin, isLoggedIn, handleLogout, fidelityLogo }) { // 
     };
 
     return (
+    <div>
+        <h1 id="personalinfoheader">Personal Info</h1>
         <div className="personal-info-container">
-            <h1>Personal Information</h1>
             <form className="personal-info-form" onSubmit={handleSubmit}>
                 <label htmlFor="first-name">First Name</label>
                 <input type="text" id="first-name" name="first-name" required />
@@ -34,6 +35,8 @@ function PersonalInfo({ onLogin, isLoggedIn, handleLogout, fidelityLogo }) { // 
                 <button type="submit">Submit</button>
             </form>
         </div>
+    </div>
+
     );
 }
 

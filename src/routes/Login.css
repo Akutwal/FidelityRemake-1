@@ -8,8 +8,7 @@
     flex-direction: column;
     align-items: flex-start; /* Align items (labels and inputs) to the left */
     justify-content: center;
-    height: 100vh;
-    gap: 1em; /* Add spacing between form elements */
+    gap: 1em;
 }
 
 #fidelity-logo-big {
@@ -124,6 +123,5 @@
 .people-icon {
     margin: 1em auto; /* Center the icon horizontally and add vertical spacing */
     width: 4em; /* Set the width of the icon */
-    margin-top: 5em; /* Add more space above the icon */
-    margin-bottom: 1em; /* Add space below the icon */
+    margin-top: 20vh; /* Add more space above the icon */
 }
