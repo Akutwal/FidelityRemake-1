@@ -1,8 +1,8 @@
 /* News heading styling */
 .news-heading {
     text-align: center;
-    font-size: 2.5rem;
-    margin: 20px 0;
+    font-size: 2.125rem; /* Reduced by 15% */
+    margin: 17px 0; /* Reduced by 15% */
     color: #333;
     font-weight: bold;
 }
@@ -10,22 +10,20 @@
 /* News box styling */
 .news-box {
     background-color: #F4EEEE;
-    padding: 30px;
-    margin: 20px auto;
-    width: 70%;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25.5px; /* Reduced by 15% */
+    margin: 17px auto; /* Reduced by 15% */
+    width: 59.5%; /* Reduced by 15% */
+    border-radius: 10.2px; /* Reduced by 15% */
+    box-shadow: 0 3.4px 6.8px rgba(0, 0, 0, 0.1); /* Reduced by 15% */
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-
 /* Article source name styling */
 .news-box p {
-    font-size: 1.5rem;
+    font-size: 1.275rem; /* Reduced by 15% */
     font-weight: bold;
-    margin: 10px 0;
+    margin: 8.5px 0; /* Reduced by 15% */
     color: #333;
 }
 
@@ -34,29 +32,27 @@
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.275rem; /* Reduced by 15% */
 }
-
-
 
 /* Total boxes styling */
 .total-boxs {
     position: relative;
-    padding: 10px;
+    padding: 8.5px; /* Reduced by 15% */
     width: auto;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 17px; /* Reduced by 15% */
     justify-content: center;
 }
 
 /* News logo styling */
 .news-logo {
     float: left;
-    width: 158px;
-    height: 141px;
-    margin-right: 20px;
+    width: 134.3px; /* Reduced by 15% */
+    height: 119.85px; /* Reduced by 15% */
+    margin-right: 17px; /* Reduced by 15% */
     border-radius: 0%;
     object-fit: cover;
 }
@@ -65,36 +61,34 @@
 .stock-data {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 17px; /* Reduced by 15% */
     background-color: #F4EEEE;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 6.8px; /* Reduced by 15% */
+    padding: 17px; /* Reduced by 15% */
+    margin-bottom: 17px; /* Reduced by 15% */
 }
 
 /* Individual stock item */
 .stock-item {
-    flex: 1 1 calc(20% - 20px);
+    flex: 1 1 calc(17% - 17px); /* Reduced by 15% */
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
+    border-radius: 6.8px; /* Reduced by 15% */
+    padding: 12.75px; /* Reduced by 15% */
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1.7px 3.4px rgba(0, 0, 0, 0.1); /* Reduced by 15% */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-
 
 .stock-item h3 {
     margin: 0;
     color: #4caf50;
-    font-size: 1.5rem;
+    font-size: 1.275rem; /* Reduced by 15% */
 }
 
 .stock-item p {
-    margin: 5px 0;
-    font-size: 1.2rem;
+    margin: 4.25px 0; /* Reduced by 15% */
+    font-size: 1.02rem; /* Reduced by 15% */
     font-weight: bold;
     color: #555;
 }
