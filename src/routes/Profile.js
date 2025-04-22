@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Profile.css";
 import ProfileAvatar from '../images/Layer 2.png';
 
@@ -9,6 +9,16 @@ function Profile() {
     const [totalFidelity, setTotalFidelity] = useState(530.44); // Initial Total in Fidelity
     const [totalIndividualValue, setTotalIndividualValue] = useState(527.46); // Initial Total individual value
     const [individualCash, setIndividualCash] = useState(1.52); // Initial Individual cash
+    const [buyingPower, setBuyingPower] = useState(1.52); // Buying power
+
+    // Load buying power from localStorage on mount
+    useEffect(() => {
+        const savedBuyingPower = localStorage.getItem("buyingPower");
+        if (savedBuyingPower) {
+            setBuyingPower(parseFloat(savedBuyingPower));
+            setIndividualCash(parseFloat(savedBuyingPower)); // Sync individual cash with buying power
+        }
+    }, []);
 
     const handleEditClick = () => {
         setIsEditing(true);
@@ -39,6 +49,11 @@ function Profile() {
             setTotalFidelity((prev) => prev + transferAmount);
             setTotalIndividualValue((prev) => prev + transferAmount);
             setIndividualCash((prev) => prev + transferAmount);
+            setBuyingPower((prev) => {
+                const newBuyingPower = prev + transferAmount;
+                localStorage.setItem("buyingPower", newBuyingPower.toFixed(2)); // Save to localStorage
+                return newBuyingPower;
+            });
 
             // Reset the amount input field
             setAmount("");
@@ -106,10 +121,10 @@ function Profile() {
                 </div>
             </div>
             <div className="profile-balance">
-                
                 <div className="Total"> 
-                <h1>${totalFidelity.toFixed(2)}</h1>
-                     <p>Total in Fidelity</p></div>
+                    <h1>${totalFidelity.toFixed(2)}</h1>
+                    <p>Total in Fidelity</p>
+                </div>
             </div>
             <div className="profile-content">
                 <div className="profile-investing">
@@ -117,7 +132,7 @@ function Profile() {
                     <hr />
                     <p>Total individual value <span>${totalIndividualValue.toFixed(2)}</span></p>
                     <p>Individual holdings <span>$525.96</span></p>
-                    <p>Individual cash <span>${individualCash.toFixed(2)}</span></p>
+                    <p>Individual cash <span>${buyingPower.toFixed(2)}</span></p>
                 </div>
             </div>
         </div>
